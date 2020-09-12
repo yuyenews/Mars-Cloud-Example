@@ -6,17 +6,17 @@ import com.demo.api.Start;
 import com.demo.api.service.ITestService;
 import com.demo.api.vo.TestVo;
 import com.demo.api.vo.TestVo2;
-import com.mars.cloud.junit.MarsCloudJunit;
 import com.mars.cloud.main.core.config.MarsCloudConfig;
 import com.mars.common.annotation.bean.MarsWrite;
 import com.mars.common.annotation.junit.MarsTest;
+import com.mars.junit.MarsJunit;
 import org.junit.Test;
 
 import java.util.List;
 import java.util.Map;
 
 @MarsTest(startClass = Start.class)
-public class TestCloud extends MarsCloudJunit {
+public class TestCloud extends MarsJunit {
 
     @MarsWrite("testService")
     private ITestService iTestService;
