@@ -58,15 +58,11 @@ public class TestCloud extends MarsJunit {
             testFileVO.setAge(12);
             testFileVO.setName("hahahah");
 
-
-
-
             MarsFileUpLoad marsFileUpLoad = new MarsFileUpLoad();
             marsFileUpLoad.setName("file");
             marsFileUpLoad.setFileName("fileName.jps");
             marsFileUpLoad.setInputStream(new FileInputStream("/Users/yuye/Downloads/a.pdf"));
             testFileVO.setFile(marsFileUpLoad);
-
 
             MarsFileUpLoad[] marsFileUpLoads = new MarsFileUpLoad[2];
             marsFileUpLoads[0] = marsFileUpLoad;
