@@ -1,8 +1,10 @@
 package com.demo.api;
 
-import com.mars.cloud.main.core.config.MarsCloudConfig;
-import com.mars.cloud.main.core.config.model.CloudConfig;
-import com.mars.cloud.main.core.config.model.enums.Strategy;
+
+import com.mars.cloud.config.MarsCloudConfig;
+import com.mars.cloud.config.model.CloudConfig;
+import com.mars.cloud.config.model.enums.Strategy;
+import com.mars.common.base.config.model.FileUploadConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,14 @@ public class DemoConfig extends MarsCloudConfig {
     @Override
     public int port() {
         return 8088;
+    }
+
+    @Override
+    public FileUploadConfig fileUploadConfig() {
+        FileUploadConfig fileUploadConfig = new FileUploadConfig();
+        fileUploadConfig.setSizeMax(fileUploadConfig.getSizeMax()*1000);
+        fileUploadConfig.setFileSizeMax(fileUploadConfig.getFileSizeMax()*1000);
+        return fileUploadConfig;
     }
 
     public List<Properties> jdbcProperties() {
@@ -32,9 +42,8 @@ public class DemoConfig extends MarsCloudConfig {
 
     public CloudConfig getCloudConfig() {
         CloudConfig cloudConfig = new CloudConfig();
-        cloudConfig.setGateWay(false);
         cloudConfig.setName("ser");
-        cloudConfig.setRegister("47.75.242.49:2181");
+        cloudConfig.setRegister("10.211.55.21:2181");
         cloudConfig.setSessionTimeout(1000000000L);
         cloudConfig.setStrategy(Strategy.POLLING);
         cloudConfig.setTimeOut(2000L);

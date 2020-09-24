@@ -1,8 +1,11 @@
 package com.demo.api.feign;
 
+import com.demo.api.vo.TestFileVO;
 import com.demo.api.vo.TestVo;
 import com.demo.api.vo.TestVo2;
-import com.mars.cloud.main.core.annotation.MarsFeign;
+import com.mars.cloud.annotation.MarsContentType;
+import com.mars.cloud.annotation.MarsFeign;
+import com.mars.cloud.annotation.enums.ContentType;
 
 import java.util.List;
 import java.util.Map;
@@ -20,4 +23,25 @@ public interface TestFeign {
      * @return
      */
     List<Map> test(TestVo testVo, TestVo2 testVo2);
+
+    @MarsContentType(ContentType = ContentType.FORM_DATA)
+    List<Map> test1(TestFileVO testFileVO);
+
+    /**
+     * 这个方法名和参数必须和要调用的接口一模一样
+     * @param testVo
+     * @param testVo2
+     * @return
+     */
+    @MarsContentType(ContentType = ContentType.JSON)
+    List<Map> test2(TestVo testVo, TestVo2 testVo2);
+
+    /**
+     * 这个方法名和参数必须和要调用的接口一模一样
+     * @param testVo
+     * @param testVo2
+     * @return
+     */
+    List<Map> test3(TestVo testVo, TestVo2 testVo2);
+
 }

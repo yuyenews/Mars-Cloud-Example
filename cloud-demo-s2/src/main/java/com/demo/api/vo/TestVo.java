@@ -11,7 +11,7 @@ public class TestVo implements Serializable {
 
     private String name;
 
-    private List<String> list;
+    private String[] list;
 
     public int getAge() {
         return age;
@@ -29,7 +29,11 @@ public class TestVo implements Serializable {
         this.name = name;
     }
 
-    public List<String> getList() {
+    public String[] getList() {
         return list;
+    }
+
+    public void setList(String[] list) {
+        this.list = list;
     }
 }
