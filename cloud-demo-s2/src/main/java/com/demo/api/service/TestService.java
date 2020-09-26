@@ -8,7 +8,9 @@ import com.demo.api.vo.TestVo;
 import com.demo.api.vo.TestVo2;
 import com.mars.common.annotation.bean.MarsBean;
 import com.mars.common.annotation.bean.MarsWrite;
+import com.mars.server.server.request.HttpMarsResponse;
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,6 +41,19 @@ public class TestService implements ITestService {
     public Object test2(TestVo testVo, TestVo2 testVo2) {
         System.out.println("test2----------------");
         return test3(testVo, testVo2);
+    }
+
+    public void testDownLoad(TestVo testVo, HttpMarsResponse response) {
+        try {
+            System.out.println("testVo:");
+            System.out.println(testVo.getAge());
+            System.out.println(testVo.getName());
+            System.out.println(JSON.toJSONString(testVo.getList()));
+
+            response.downLoad("hhhh.pdf", new FileInputStream("/Users/yuye/Downloads/a.pdf"));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public Object test3(TestVo testVo, TestVo2 testVo2) {

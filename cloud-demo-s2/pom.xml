@@ -12,12 +12,12 @@
         <dependency>
             <groupId>com.github.yuyenews</groupId>
             <artifactId>mars-starter</artifactId>
-            <version>3.0.33</version>
+            <version>3.0.36</version>
         </dependency>
         <dependency>
             <groupId>com.github.yuyenews</groupId>
-            <artifactId>martian-cloud-starter</artifactId>
-            <version>3.0.20</version>
+            <artifactId>mars-cloud-starter</artifactId>
+            <version>3.0.25</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

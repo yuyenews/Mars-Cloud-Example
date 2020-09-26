@@ -6,6 +6,7 @@ import com.demo.api.vo.TestVo2;
 import com.mars.common.annotation.api.MarsApi;
 import com.mars.common.annotation.api.RequestMethod;
 import com.mars.common.annotation.enums.ReqMethod;
+import com.mars.server.server.request.HttpMarsResponse;
 
 @MarsApi(refBean = "testService")
 public interface ITestService {
@@ -42,4 +43,10 @@ public interface ITestService {
      * @return
      */
     Object test3(TestVo testVo, TestVo2 testVo2);
+
+    /**
+     * 下载
+     * @return
+     */
+    void testDownLoad(TestVo testVo, HttpMarsResponse response);
 }
