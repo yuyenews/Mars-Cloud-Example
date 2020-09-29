@@ -1,7 +1,8 @@
 package com.demo.api.vo;
 
+import com.mars.common.annotation.api.MarsDataCheck;
+
 import java.io.Serializable;
-import java.util.List;
 
 public class TestVo implements Serializable {
 
@@ -9,6 +10,7 @@ public class TestVo implements Serializable {
 
     private int age;
 
+    @MarsDataCheck(notNull = true,msg = "名称不可为空", apis = "test")
     private String name;
 
     private String[] list;
