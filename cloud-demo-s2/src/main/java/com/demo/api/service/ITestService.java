@@ -6,6 +6,7 @@ import com.demo.api.vo.TestVo2;
 import com.mars.common.annotation.api.MarsApi;
 import com.mars.common.annotation.api.RequestMethod;
 import com.mars.common.annotation.enums.ReqMethod;
+import com.mars.server.server.request.HttpMarsRequest;
 import com.mars.server.server.request.HttpMarsResponse;
 
 @MarsApi(refBean = "testService")
@@ -18,7 +19,7 @@ public interface ITestService {
      * @return
      */
     @RequestMethod(ReqMethod.POST)
-    Object test(TestVo testVo, TestVo2 testVo2);
+    Object test(TestVo testVo, TestVo2 testVo2, HttpMarsRequest request);
 
     /**
      * PUT, FORM_DATA

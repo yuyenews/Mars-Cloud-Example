@@ -8,6 +8,8 @@ import com.demo.api.vo.TestVo;
 import com.demo.api.vo.TestVo2;
 import com.mars.common.annotation.bean.MarsBean;
 import com.mars.common.annotation.bean.MarsWrite;
+import com.mars.server.server.request.HttpMarsRequest;
+import com.sun.net.httpserver.Headers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,8 +25,12 @@ public class TestService implements ITestService {
     @MarsWrite
     private TestDAO testDAO;
 
-    public Object test(TestVo testVo, TestVo2 testVo2){
+    public Object test(TestVo testVo, TestVo2 testVo2, HttpMarsRequest request){
         System.out.println("test----------------");
+        Headers headers = request.getHttpExchange().getRequestHeaders();
+        for(String name : headers.keySet()){
+            System.out.println("header:"+name+"="+JSON.toJSONString(headers.get(name)));
+        }
         return test3(testVo, testVo2);
     }
 
