@@ -10,6 +10,7 @@ import com.mars.common.annotation.bean.MarsBean;
 import com.mars.common.annotation.bean.MarsWrite;
 import com.mars.server.server.request.HttpMarsRequest;
 import com.sun.net.httpserver.Headers;
+import com.sun.net.httpserver.HttpExchange;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class TestService implements ITestService {
 
     public Object test(TestVo testVo, TestVo2 testVo2, HttpMarsRequest request){
         System.out.println("test----------------");
-        Headers headers = request.getHttpExchange().getRequestHeaders();
+        Headers headers = request.getNativeRequest(HttpExchange.class).getRequestHeaders();
         for(String name : headers.keySet()){
             System.out.println("header:"+name+"="+JSON.toJSONString(headers.get(name)));
         }

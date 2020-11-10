@@ -33,7 +33,7 @@ public class TestCloud extends MarsJunit {
         try {
             TestVo testVo = new TestVo();
             testVo.setAge(12);
-//            testVo.setName("王五");
+            testVo.setName("王五");
             testVo.setList(new String[]{"哈哈哈","我是天才"});
 
             TestVo2 testVo2 = new TestVo2();

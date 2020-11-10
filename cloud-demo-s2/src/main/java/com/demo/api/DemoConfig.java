@@ -34,8 +34,7 @@ public class DemoConfig extends MarsCloudConfig {
     public CloudConfig getCloudConfig() {
         CloudConfig cloudConfig = new CloudConfig();
         cloudConfig.setName("ser");
-        cloudConfig.setRegister("10.211.55.21:2181");
-        cloudConfig.setSessionTimeout(1000000000L);
+        cloudConfig.setContagions("http://127.0.01:8088");
         cloudConfig.setStrategy(Strategy.POLLING);
         cloudConfig.setTimeOut(2000L);
 
