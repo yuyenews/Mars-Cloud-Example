@@ -8,7 +8,6 @@ import com.demo.api.vo.TestVo2;
 import com.mars.common.annotation.bean.MarsBean;
 import com.mars.common.annotation.bean.MarsWrite;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

@@ -1,8 +1,8 @@
 package com.lx.test;
 
 import com.alibaba.fastjson.JSON;
+import com.demo.api.ApiStart;
 import com.demo.api.DemoConfig;
-import com.demo.api.Start;
 import com.demo.api.service.ITestService;
 import com.demo.api.vo.TestFileVO;
 import com.demo.api.vo.TestVo;
@@ -18,7 +18,7 @@ import java.io.FileInputStream;
 import java.util.List;
 import java.util.Map;
 
-@MarsTest(startClass = Start.class)
+@MarsTest(startClass = ApiStart.class)
 public class TestCloud extends MarsJunit {
 
     @MarsWrite("testService")

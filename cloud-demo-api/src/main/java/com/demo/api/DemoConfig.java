@@ -31,6 +31,7 @@ public class DemoConfig extends MarsCloudConfig {
         cloudConfig.setStrategy(Strategy.POLLING);
         cloudConfig.setTimeOut(2000L);
         cloudConfig.setGateWay(true);
+        cloudConfig.setOfflineVote(2);
         return cloudConfig;
     }
 }
