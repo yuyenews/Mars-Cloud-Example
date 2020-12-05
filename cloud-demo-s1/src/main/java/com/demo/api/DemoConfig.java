@@ -1,9 +1,10 @@
 package com.demo.api;
 
 
+import com.mars.cloud.balanced.BalancedCalc;
 import com.mars.cloud.config.MarsCloudConfig;
 import com.mars.cloud.config.model.CloudConfig;
-import com.mars.cloud.config.model.enums.Strategy;
+import com.mars.cloud.request.balanced.impl.BalancedCalcPolling;
 import com.mars.common.base.config.model.FileUploadConfig;
 
 import java.util.ArrayList;
@@ -44,10 +45,19 @@ public class DemoConfig extends MarsCloudConfig {
         CloudConfig cloudConfig = new CloudConfig();
         cloudConfig.setName("ser");
         cloudConfig.setContagions("http://127.0.01:8089");
-        cloudConfig.setStrategy(Strategy.POLLING);
         cloudConfig.setTimeOut(2000L);
 
         return cloudConfig;
+    }
+
+    /**
+     * 配置负载均衡策略为轮询
+     * @return
+     */
+    @Override
+    public BalancedCalc getBalancedCalc() {
+        /* 这个策略可以自定义，自己实现BalancedCalc接口，然后在这返回即可 */
+        return new BalancedCalcPolling();
     }
 }
 
