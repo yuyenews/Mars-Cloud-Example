@@ -6,8 +6,11 @@ import com.demo.api.feign.TestFeign;
 import com.demo.api.vo.TestFileVO;
 import com.demo.api.vo.TestVo;
 import com.demo.api.vo.TestVo2;
+import com.mars.cloud.request.util.model.MarsHeader;
 import com.mars.common.annotation.bean.MarsBean;
 import com.mars.common.annotation.bean.MarsWrite;
+import com.mars.iserver.server.impl.MarsHttpExchange;
+import com.mars.iserver.server.model.HttpHeaders;
 import com.mars.server.server.request.HttpMarsRequest;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
@@ -28,7 +31,7 @@ public class TestService implements ITestService {
 
     public Object test(TestVo testVo, TestVo2 testVo2, HttpMarsRequest request){
         System.out.println("test----------------");
-        Headers headers = request.getNativeRequest(HttpExchange.class).getRequestHeaders();
+        HttpHeaders headers = request.getNativeRequest(MarsHttpExchange.class).getRequestHeaders();
         for(String name : headers.keySet()){
             System.out.println("header:"+name+"="+JSON.toJSONString(headers.get(name)));
         }
