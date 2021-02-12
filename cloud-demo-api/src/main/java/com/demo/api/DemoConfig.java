@@ -5,6 +5,7 @@ import com.mars.cloud.balanced.BalancedCalc;
 import com.mars.cloud.config.MarsCloudConfig;
 import com.mars.cloud.config.model.CloudConfig;
 import com.mars.cloud.request.balanced.impl.BalancedCalcPolling;
+import com.mars.common.base.config.model.FileUploadConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,14 @@ public class DemoConfig extends MarsCloudConfig {
     @Override
     public int port() {
         return 8087;
+    }
+
+    @Override
+    public FileUploadConfig fileUploadConfig() {
+        FileUploadConfig fileUploadConfig = new FileUploadConfig();
+        fileUploadConfig.setSizeMax(fileUploadConfig.getSizeMax()*1000);
+        fileUploadConfig.setFileSizeMax(fileUploadConfig.getFileSizeMax()*1000);
+        return fileUploadConfig;
     }
 
     public List<Properties> jdbcProperties() {
