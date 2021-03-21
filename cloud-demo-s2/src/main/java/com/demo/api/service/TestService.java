@@ -1,6 +1,5 @@
 package com.demo.api.service;
 
-import com.alibaba.fastjson.JSON;
 import com.demo.api.dao.TestDAO;
 import com.demo.api.feign.TestFeign;
 import com.demo.api.vo.TestFileVO;
@@ -8,6 +7,7 @@ import com.demo.api.vo.TestVo;
 import com.demo.api.vo.TestVo2;
 import com.mars.common.annotation.bean.MarsBean;
 import com.mars.common.annotation.bean.MarsWrite;
+import com.mars.common.util.JSONUtil;
 import com.mars.iserver.server.impl.MarsHttpExchange;
 import com.mars.iserver.server.model.HttpHeaders;
 import com.mars.server.server.request.HttpMarsRequest;
@@ -34,7 +34,7 @@ public class TestService implements ITestService {
         System.out.println("test----------------");
         HttpHeaders headers = request.getNativeRequest(MarsHttpExchange.class).getRequestHeaders();
         for(String name : headers.keySet()){
-            System.out.println("header:"+name+"="+JSON.toJSONString(headers.get(name)));
+            System.out.println("header:"+name+"="+ JSONUtil.toJSONString(headers.get(name)));
         }
         return test3(testVo, testVo2);
     }
@@ -57,7 +57,7 @@ public class TestService implements ITestService {
             System.out.println("testVo:");
             System.out.println(testVo.getAge());
             System.out.println(testVo.getName());
-            System.out.println(JSON.toJSONString(testVo.getList()));
+            System.out.println(JSONUtil.toJSONString(testVo.getList()));
 
             response.downLoad("hhhh.pdf", new FileInputStream("/Users/yuye/Downloads/a.pdf"));
         } catch (Exception e){
@@ -69,7 +69,7 @@ public class TestService implements ITestService {
         System.out.println("testVo:");
         System.out.println(testVo.getAge());
         System.out.println(testVo.getName());
-        System.out.println(JSON.toJSONString(testVo.getList()));
+        System.out.println(JSONUtil.toJSONString(testVo.getList()));
 
         System.out.println("testVo2:");
         System.out.println(testVo2.getA());

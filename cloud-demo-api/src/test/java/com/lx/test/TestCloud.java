@@ -1,6 +1,5 @@
 package com.lx.test;
 
-import com.alibaba.fastjson.JSON;
 import com.demo.api.ApiStart;
 import com.demo.api.DemoConfig;
 import com.demo.api.service.ITestService;
@@ -10,6 +9,7 @@ import com.demo.api.vo.TestVo2;
 import com.mars.cloud.config.MarsCloudConfig;
 import com.mars.common.annotation.bean.MarsWrite;
 import com.mars.common.annotation.junit.MarsTest;
+import com.mars.common.util.JSONUtil;
 import com.mars.junit.MarsJunit;
 import com.mars.server.server.request.model.MarsFileUpLoad;
 import org.junit.Test;
@@ -42,7 +42,7 @@ public class TestCloud extends MarsJunit {
 
             List<Map> list = iTestService.test(testVo,testVo2);
             for(Map map : list){
-                System.out.println(JSON.toJSONString(map));
+                System.out.println(JSONUtil.toJSONString(map));
             }
 
         } catch (Exception e){
@@ -71,7 +71,7 @@ public class TestCloud extends MarsJunit {
 
             List<Map> list2 = iTestService.test1(testFileVO);
             for(Map map : list2){
-                System.out.println(JSON.toJSONString(map));
+                System.out.println(JSONUtil.toJSONString(map));
             }
 
         } catch (Exception e){
