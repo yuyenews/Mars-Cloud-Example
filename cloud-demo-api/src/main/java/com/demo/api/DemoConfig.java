@@ -40,7 +40,7 @@ public class DemoConfig extends MarsCloudConfig {
         cloudConfig.setContagions("http://127.0.0.1:8088");
         cloudConfig.setTimeOut(2000L);
         cloudConfig.setGateWay(true);
-        cloudConfig.setOfflineVote(2);
+        cloudConfig.setApiCacheTimeout(6000);
         return cloudConfig;
     }
 

@@ -27,7 +27,7 @@ public class TestService implements ITestService {
     }
 
     public List<Map> test1(TestFileVO testFileVO) {
-        System.out.println(JSONUtil.toJSONString(testFileVO));
+//        System.out.println(JSONUtil.toJSONString(testFileVO));
 
         return testFeign.test1(testFileVO);
     }

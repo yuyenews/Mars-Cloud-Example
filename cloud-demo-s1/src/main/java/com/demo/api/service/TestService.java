@@ -5,15 +5,12 @@ import com.demo.api.feign.TestFeign;
 import com.demo.api.vo.TestFileVO;
 import com.demo.api.vo.TestVo;
 import com.demo.api.vo.TestVo2;
-import com.mars.cloud.request.util.model.MarsHeader;
+import com.mars.aio.server.impl.MarsHttpExchange;
+import com.mars.aio.server.model.HttpHeaders;
 import com.mars.common.annotation.bean.MarsBean;
 import com.mars.common.annotation.bean.MarsWrite;
 import com.mars.common.util.JSONUtil;
-import com.mars.iserver.server.impl.MarsHttpExchange;
-import com.mars.iserver.server.model.HttpHeaders;
 import com.mars.server.server.request.HttpMarsRequest;
-import com.sun.net.httpserver.Headers;
-import com.sun.net.httpserver.HttpExchange;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -48,6 +48,7 @@ public class DemoConfig extends MarsCloudConfig {
         cloudConfig.setName("ser");
         cloudConfig.setContagions("http://127.0.01:8088");
         cloudConfig.setTimeOut(2000L);
+        cloudConfig.setApiCacheTimeout(6000);
 
         return cloudConfig;
     }
